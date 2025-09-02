@@ -3,7 +3,7 @@ from tkinter.ttk import *
 
 root = Tk()
 
-progress = Progressbar(root, orient=Horizontal,
+progress = Progressbar(root, orient=HORIZONTAL,
                        length=300, mode='determinate')
 
 
@@ -13,22 +13,24 @@ def bar():
     root.update_idletasks()
     time.sleep(1)
 
-    import time
     progress['value'] = 40
     root.update_idletasks()
     time.sleep(3)
 
-    import time
-    progress['value'] = 600
+    progress['value'] = 60
     root.update_idletasks()
-    time.sleep(1)
+    time.sleep(2)
 
-    import time
     progress['value'] = 80
     root.update_idletasks()
-    time.sleep(1)
+    time.sleep(3)
 
-    import time
     progress['value'] = 100
     root.update_idletasks()
-    time.sleep(3)
+    time.sleep(5)
+
+progress.pack(pady=10)
+
+Button(root, text='Start', command=bar).pack(pady=10)
+
+mainloop()
